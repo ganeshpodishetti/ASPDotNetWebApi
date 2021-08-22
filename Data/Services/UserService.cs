@@ -25,7 +25,8 @@ namespace CRUDOperations.Data.Services
                 Age = user.Age,
                 Gender = user.Gender,
                 PhnNo = user.PhnNo,
-                Country = user.Country
+                Country = user.Country,
+                Accounts = user.Accounts.ToList()
             };
             _context.users.Add(_user);
             _context.SaveChanges();
@@ -35,14 +36,14 @@ namespace CRUDOperations.Data.Services
 
         public User GetUserById(int userId)
         {
-            var _userWithAccount = _context.users.Select(user => new User()
+            var _userWithAccount = _context.users.Where(n=> n.UserId == userId).Select(user => new User()
             {
                 Name = user.Name,
-                Age = user.Age,
+                Age = user.Age, 
                 Gender = user.Gender,
                 PhnNo = user.PhnNo,
-                Country = user.Country
-                
+                Country = user.Country,
+                Accounts = user.Accounts
             }).FirstOrDefault();
 
             return _userWithAccount;
@@ -60,6 +61,7 @@ namespace CRUDOperations.Data.Services
                 _user.Gender = user.Gender;
                 _user.PhnNo = user.PhnNo;
                 _user.Country = user.Country;
+                //_user.Accounts = user.Accounts;
                 _context.SaveChanges();
             }
             return _user;

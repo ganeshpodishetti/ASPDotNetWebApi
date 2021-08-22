@@ -39,7 +39,7 @@ namespace CRUDOperations
 
             // Configure the services
             services.AddTransient<UserService>();
-            //services.AddTransient<AccountService>();
+            services.AddTransient<AccountService>();
 
             services.AddSwaggerGen(c =>
             {

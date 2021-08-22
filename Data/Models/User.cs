@@ -16,6 +16,6 @@ namespace CRUDOperations.Data.Models
         public string Country { get; set; }
 
         // Navigation Properties
-        //public List<Account> Accounts { get; set; }
+        public List<Account> Accounts { get; set; }
     }
 }

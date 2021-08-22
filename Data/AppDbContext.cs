@@ -17,12 +17,12 @@ namespace CRUDOperations.Data
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
         //    modelBuilder.Entity<Account>()
-        //        .HasOne(b => b.users)
-        //        .WithMany(ba => ba.Users)
-        //        .HasForeignKey(K => K.UserId);
+        //        .HasRequired<User>(b => b.User)
+        //        .WithMany(ba => ba.Accounts)
+        //        .HasForeignKey<int>(K => K.UserId);
         //}
 
         public DbSet<User> users { get; set; }
-        //public DbSet<Account> accounts { get; set; }
+        public DbSet<Account> accounts { get; set; }
     }
 }

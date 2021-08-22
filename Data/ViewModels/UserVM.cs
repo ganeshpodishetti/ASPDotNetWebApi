@@ -14,6 +14,7 @@ namespace CRUDOperations.Data.ViewModels
         public string PhnNo { get; set; }
         public string Country { get; set; }
 
+        public List<Account> Accounts { get; set; }
         //public List<AccountVM> Accounts { get; set; }
     }
 }

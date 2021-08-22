@@ -35,7 +35,7 @@ namespace CRUDOperations.Controllers
             return Ok(userById);
         }
 
-        [HttpPost("addUser")]
+        [HttpPost("addUserWithAccount")]
         public IActionResult AddUser([FromBody]UserVM user)
         {
             _userService.AddUser(user);

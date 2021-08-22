@@ -11,5 +11,6 @@ namespace CRUDOperations.Data.ViewModels
         public long AccountNumber { get; set; }
         public string AccountType { get; set; }
         public double Balance { get; set; }
+        //public string Name { get; set; }
     }
 }

@@ -34,6 +34,11 @@ namespace CRUDOperations.Data.Services
 
         public List<User> GetAllUsers() => _context.users.ToList();
 
+        //public List<User> GetAllUsers()
+        //{
+        //    return _context.users.ToList(UserVM);
+        //}
+
         public User GetUserById(int userId)
         {
             var _userWithAccount = _context.users.Where(n=> n.UserId == userId).Select(user => new User()

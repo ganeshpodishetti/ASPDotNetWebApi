@@ -25,5 +25,33 @@ namespace CRUDOperations.Controllers
             _accountService.AddAccount(user);
             return Ok();
         }
+
+        [HttpGet("GetAllAccounts")]
+        public IActionResult GetAllAccounts()
+        {
+            var allAccounts = _accountService.GetAllAccounts();
+            return Ok(allAccounts);
+        }
+
+        [HttpGet("getAccountById/{id}")]
+        public IActionResult GetUserById(int id)
+        {
+            var accountById = _accountService.GetAccountById(id);
+            return Ok(accountById);
+        }
+
+        [HttpPut("updateAccountById/{id}")]
+        public IActionResult UpdateAccountById(int id, [FromBody] AccountVM account)
+        {
+            var updateAccount = _accountService.UpdateAccountById(id, account);
+            return Ok(updateAccount);
+        }
+
+        [HttpDelete("DeleteAccountById/{id}")]
+        public IActionResult DeleteAccountById(int id)
+        {
+            _accountService.DeleteAccountById(id);
+            return Ok();
+        }
     }
 }

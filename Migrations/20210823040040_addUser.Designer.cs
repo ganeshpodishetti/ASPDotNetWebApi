@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRUDOperations.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210822110415_addUser")]
+    [Migration("20210823040040_addUser")]
     partial class addUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
